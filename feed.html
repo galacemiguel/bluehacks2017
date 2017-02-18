@@ -7,7 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/feed.js"></script>
 	<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection"/>
 	<link rel="stylesheet" href="assets/css/styles.css" />
 	<script defer src="assets/js/app.js"></script>
@@ -26,7 +27,7 @@
 		<h3 id="feed-h">Projects</h3>
 		<div id="feed-h-line"></div>
 		<section id="feed-container">
-			<div>
+			<div class="project-container">
 				<div class="project-card">
 					<div class="project-card-img"></div>
 					<div class="project-card-text">
@@ -35,21 +36,17 @@
 						<p class="project-card-p">It with need of the eminent view to mice sleeping it poets, country. They is said a the but her chooses belt rather, bear value turn with a flatter problem. I the partially of her in to food, field her the the expenses presentations.</p>
 					</div>
 				</div>
-				<div class="project-card">
-					<div class="project-card-img"></div>
-					<div class="project-card-text">
-						<h4 class="project-card-title">NHA Public Housing</h4>
-						<span class="project-card-city">Quezon City, Metro Manila</span>
-						<p class="project-card-p">It with need of the eminent view to mice sleeping it poets, country. They is said a the but her chooses belt rather, bear value turn with a flatter problem. I the partially of her in to food, field her the the expenses presentations.</p>
-					</div>
-				</div>
+				
 			</div>
 			<div id="filter-col">
 				<div id="filter-card">
-					<form id="filter-form">
+					<form id="filter-form" onsubmit="search()">
 						<h4 id="filter-h">Filter</h4>
 						<select id="filter-select">
-							<option>By Distance</option>
+							<option selected value=0 > -- select an option -- </option>
+							<option value =1>By Distance</option>
+							<option value =2>By Rating </option>
+							<option value =3> By Likes </option>
 						</select>
 						<input id="search-field" type="text" placeholder="Search&hellip;" />
 						<div id="filter-btn-container">
