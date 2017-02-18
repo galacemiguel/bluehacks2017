@@ -341,10 +341,11 @@ body#feed, body#project {
 
 #projects-col {
 	width: 70%;
+	padding-right: 40px;
 }
 
 .project-card {
-	width: 100%%;
+	width: 100%;
 	height: 425px;
 	margin-top: 30px;
 	background: #FFF;
@@ -359,10 +360,37 @@ body#feed, body#project {
 	background-size: cover;
 }
 
+.project-card-info {
+	display: flex;
+	justify-content: space-between;
+	padding: 30px;
+}
+
 .project-card-text {
 	width: 100%;
-	height: 150px;
-	padding: 30px;
+}
+
+.project-card-votes {
+	align-self: flex-end;
+	width: 90px;
+	color: #FFF;
+	font: 12px/30px "Tofino Bold";
+	text-align: center;
+}
+
+.project-card-upvotes {
+	width: 100%;
+	height: 30px;
+	margin-bottom: 5px;
+	background: #20bf55;
+	cursor: pointer;
+}
+
+.project-card-downvotes {
+	width: 100%;
+	height: 30px;
+	background: #E83151;
+	cursor: pointer;
 }
 
 .project-card-title {
@@ -490,10 +518,10 @@ body#feed, body#project {
 
 #project-cover-info {
 	position: absolute;
+	bottom: 25px;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
-	bottom: 25px;
 	width: calc(100% - 400px);
 }
 
@@ -504,23 +532,23 @@ body#feed, body#project {
 #project-cover-votes {
 	width: 120px;
 	color: #FFF;
-	text-align: center;
 	font: 15px/40px "Tofino Bold";
+	text-align: center;
 }
 
 #project-cover-upvotes {
 	width: 100%;
 	height: 40px;
-	cursor: pointer;
 	margin-bottom: 10px;
 	background: #20bf55;
+	cursor: pointer;
 }
 
 #project-cover-downvotes {
 	width: 100%;
-	cursor: pointer;
 	height: 40px;
 	background: #E83151;
+	cursor: pointer;
 }
 
 #project-cover-title {
@@ -665,25 +693,25 @@ body#feed, body#project {
 }
 
 .project-feedback-p {
-	color: #757780;
 	width: 580px;
+	color: #757780;
 	font: 15px "Tofino Regular";
 }
 
 #add-feedback-card {
 	position: fixed;
+	z-index: 1000;
 	top: 50%;
-	left: 0;
 	right: 0;
 	bottom: -400px;
-	z-index: 1000;
+	left: 0;
 	width: 700px;
 	height: 400px;
 	padding: 30px;
 	margin: auto;
 	background: #FFF;
-	transform: translateY(100%);
 	transition: transform .5s;
+	transform: translateY(100%);
 }
 
 #add-feedback-card.active {
@@ -704,12 +732,12 @@ body#feed, body#project {
 
 #add-feedback-form-btns {
 	position: absolute;
-	background: rgba(137, 137, 137, 0.05);
-	left: 0;
 	bottom: 0;
+	left: 0;
 	width: 100%;
-	border-top: 1px solid rgba(137, 137, 137, 0.25);
 	padding: 15px 30px;
+	border-top: 1px solid rgba(137, 137, 137, 0.25);
+	background: rgba(137, 137, 137, 0.05);
 }
 
 #add-feedback-submit {
@@ -750,8 +778,8 @@ body#feed, body#project {
 	position: fixed;
 	z-index: 1000;
 	top: 0;
+	display: none;
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, .5);
-	display: none;
 }
