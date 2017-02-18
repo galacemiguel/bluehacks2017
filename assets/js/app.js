@@ -12,8 +12,10 @@ $(document).ready(function() {
 		$("#add-feedback-card").addClass("active");
 	});
 
-	$("#overlay").on("click", function() {
-		$(this).hide();
+	$("#project-timeline-progress").addClass("load");
+
+	$("#overlay, #add-feedback-submit").on("click", function() {
+		$("#overlay").hide();
 		$("#add-feedback-card").removeClass("active");
-	})
+	});
 });
