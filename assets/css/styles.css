@@ -416,11 +416,14 @@ body#feed {
 #search-field {
 	width: 100%;
 	margin-bottom: 100px;
-	padding: 5px 0;
 	border: none;
 	border-bottom: 1px solid #757780;
 	color: #757780;
 	font: 15px "Tofino Regular";
+}
+
+::-webkit-input-placeholder {
+	color: #DBD4D3;
 }
 
 #filter-btn-container {
@@ -442,4 +445,11 @@ body#feed {
 	font: 15px "Tofino Bold";
 	letter-spacing: 1px;
 	text-transform: uppercase;
+}
+
+#add-project-btn {
+	position: fixed;
+	bottom: 50px;
+	right: 75px;
+	background: #E83151;
 }
