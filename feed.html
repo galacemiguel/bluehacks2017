@@ -14,7 +14,7 @@
 </head>
 
 <body id="feed">
-	<nav id="feed-nav">
+	<nav class="site-nav">
 		<img class="logo" src="assets/images/logo.png" />
 		<ul>
 			<li>My Projects</li>
@@ -25,16 +25,8 @@
 	<div id="feed-content">
 		<h3 id="feed-h">Projects</h3>
 		<div id="feed-h-line"></div>
-		<section id="feed-container">
-			<div>
-				<div class="project-card">
-					<div class="project-card-img"></div>
-					<div class="project-card-text">
-						<h4 class="project-card-title">NHA Public Housing</h4>
-						<span class="project-card-city">Quezon City, Metro Manila</span>
-						<p class="project-card-p">It with need of the eminent view to mice sleeping it poets, country. They is said a the but her chooses belt rather, bear value turn with a flatter problem. I the partially of her in to food, field her the the expenses presentations.</p>
-					</div>
-				</div>
+		<section id="feed-grid">
+			<div id="projects-col">
 				<div class="project-card">
 					<div class="project-card-img"></div>
 					<div class="project-card-text">
@@ -53,14 +45,14 @@
 						</select>
 						<input id="search-field" type="text" placeholder="Search&hellip;" />
 						<div id="filter-btn-container">
-							<input id="filter-submit" type="submit" text="Submit" />
+							<input id="filter-submit" type="submit" />
 						</div>
 					</form>
 				</div>
 			</div>
 		</section>
 	</div>
-	<a class="btn-floating btn-large waves-effect waves-light" id="add-project-btn" href="new-project.html"><i class="material-icons">add</i></a>
+	<a class="add-btn btn-floating btn-large waves-effect waves-light" href="new-project.html"><i class="material-icons">add</i></a>
 
 	<script type="text/javascript" src="assets/js/materialize.min.js"></script>
 </body>

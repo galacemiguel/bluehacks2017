@@ -121,7 +121,7 @@ a {
 }
 
 nav ul li {
-	color: #fff;
+	color: #FFF;
 	font: 15px "Tofino Bold";
 	cursor: pointer;
 	letter-spacing: 1px;
@@ -148,13 +148,13 @@ nav ul li {
 
 #jumbo-hs h2 {
 	margin-bottom: 12px;
-	color: #fff;
+	color: #FFF;
 	font: 50px/50px "Tofino Book";
 }
 
 #jumbo-hs h1 {
 	margin-bottom: 40px;
-	color: #fff;
+	color: #FFF;
 	font: 67px/67px "Tofino Bold";
 	letter-spacing: 2px;
 }
@@ -163,11 +163,11 @@ nav ul li {
 	width: 300px;
 	height: 60px;
 	border: none;
-	color: #fff;
+	color: #FFF;
 	background: #E83151;
 	font: 21px "Tofino Bold";
 	cursor: pointer;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	text-transform: uppercase;
 }
 
@@ -201,7 +201,7 @@ body#login {
 	height: 385px;
 	padding: 48px;
 	margin: 0 auto;
-	background: #fff;
+	background: #FFF;
 	box-shadow: 0 0 5px rgba(0,0,0,.1);
 }
 
@@ -253,7 +253,7 @@ body#login {
 
 #login-submit {
 	border: none;
-	color: #fff;
+	color: #FFF;
 	background: #E83151;
 	font: 15px "Tofino Bold";
 	cursor: pointer;
@@ -285,12 +285,13 @@ body#login {
 
 */
 
-body#feed {
+body#feed, body#project {
 	background: #eee;
 }
 
-#feed-nav {
+.site-nav {
 	position: fixed;
+	z-index: 999;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -300,31 +301,33 @@ body#feed {
 	background: #387780;
 }
 
-#feed-nav .logo {
+.site-nav .logo {
 	width: 180px;
 }
 
-#feed-nav ul {
+.site-nav ul {
 	display: flex;
 	justify-content: flex-end;
 }
 
-#feed-nav ul li {
+.site-nav ul li {
 	margin-left: 40px;
 }
 
 #feed-content {
-	padding: 80px 200px;
+	max-width: 1200px;
+	padding-top: 80px;
+	margin: 0 auto;
 }
 
-#feed-container {
+#feed-grid {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
 }
 
 #feed-h {
-	margin: 80px 0 5px;
+	margin: 40px 0 5px;
 	color: #E83151;
 	font: 21px "Tofino Bold";
 	text-transform: uppercase;
@@ -336,11 +339,15 @@ body#feed {
 	background: #E83151;
 }
 
+#projects-col {
+	width: 70%;
+}
+
 .project-card {
-	width: 750px;
+	width: 100%%;
 	height: 425px;
 	margin-top: 30px;
-	background: #fff;
+	background: #FFF;
 	cursor: pointer;
 }
 
@@ -348,7 +355,7 @@ body#feed {
 	width: 100%;
 	height: 275px;
 	background: url("../images/housing.jpg");
-	background-position-y: 33%;
+	background-position-y: 100%;
 	background-size: cover;
 }
 
@@ -378,16 +385,16 @@ body#feed {
 }
 
 #filter-col {
-	width: 364px;
+	width: 30%;
 }
 
 #filter-card {
-	transition: transform .5s;
 	position: fixed;
 	width: 364px;
 	padding: 30px;
 	margin-top: 30px;
-	background: #fff;
+	background: #FFF;
+	transition: transform .5s;
 	vertical-align: top;
 }
 
@@ -397,27 +404,27 @@ body#feed {
 
 #filter-h {
 	margin-bottom: 30px;
+	color: #757780;
 	font: 21px "Tofino Bold";
 	text-transform: uppercase;
-	color: #757780;
 }
 
 #filter-select {
 	display: block;
 	width: 100%;
-	margin-bottom: 30px;
+	padding: 5px 0;
 	border: none;
 	border-bottom: 1px solid #757780;
-	font: 15px "Tofino Regular";
-	padding: 5px 0;
+	margin-bottom: 30px;
 	color: #757780;
+	font: 15px "Tofino Regular";
 }
 
 #search-field {
 	width: 100%;
-	margin-bottom: 100px;
 	border: none;
 	border-bottom: 1px solid #757780;
+	margin-bottom: 100px;
 	color: #757780;
 	font: 15px "Tofino Regular";
 }
@@ -440,16 +447,311 @@ body#feed {
 	width: 120px;
 	height: 40px;
 	border: none;
-	color: #fff;
+	color: #FFF;
 	background: #E83151;
 	font: 15px "Tofino Bold";
 	letter-spacing: 1px;
 	text-transform: uppercase;
 }
 
-#add-project-btn {
+.add-btn {
 	position: fixed;
-	bottom: 50px;
 	right: 75px;
+	bottom: 50px;
 	background: #E83151;
+}
+
+/*
+ ==================================================
+ PROJECT
+
+*/
+
+#project-content {
+	width: 100%;
+	padding-top: 80px;
+}
+
+#project-cover {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	padding: 0 200px;
+	background: linear-gradient(
+		rgba(0, 0, 0, 0.0) 50%, 
+		rgba(0, 0, 0, 0.75)
+	), linear-gradient(
+		rgba(0, 0, 0, 0.2), 
+		rgba(0, 0, 0, 0.2)
+	), url("../images/housing.jpg") no-repeat;
+	background-position-y: 100%;
+	background-size: cover;
+}
+
+#project-cover-info {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	bottom: 25px;
+	width: calc(100% - 400px);
+}
+
+#project-cover-hs {
+	color: #E83151;
+}
+
+#project-cover-votes {
+	width: 120px;
+	color: #FFF;
+	text-align: center;
+	font: 15px/40px "Tofino Bold";
+}
+
+#project-cover-upvotes {
+	width: 100%;
+	height: 40px;
+	cursor: pointer;
+	margin-bottom: 10px;
+	background: #20bf55;
+}
+
+#project-cover-downvotes {
+	width: 100%;
+	cursor: pointer;
+	height: 40px;
+	background: #E83151;
+}
+
+#project-cover-title {
+	font: 67px "Tofino Bold";
+}
+
+#project-cover-city {
+	font: 28px "Tofino Book";
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+#project-info {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+#project-timeline {
+	width: 100%;
+	padding: 40px 0;
+}
+
+#project-timeline-bar {
+	position: relative;
+	width: 100%;
+	height: 40px;
+	border-radius: 20px;
+	background: #FFF;
+}
+
+#project-timeline-progress {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 10px;
+	width: calc(75% - 20px);
+	height: 20px;
+	border-radius: 10px;
+	margin: auto;
+	background: #E83151;
+}
+
+#project-start {
+	float: left;
+	padding-top: 12px;
+	color: #E83151;
+	font: 21px "Tofino Bold";
+}
+
+#project-end {
+	float: right;
+	padding-top: 12px;
+	color: #E83151;
+	font: 21px "Tofino Bold";
+}
+
+#project-about {
+	width: 30%;
+}
+
+#project-about-card {
+	position: relative;
+	width: 100%;	
+	padding: 30px;
+	color: #757780;
+	background: #FFF;
+}
+
+#project-about-h {
+	color: #757780;
+	font: 21px "Tofino Bold";
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+#project-contact {
+	display: block;
+	margin-bottom: 12px;
+	font: 15px "Tofino Book";
+}
+
+#project-about-p {
+	margin-bottom: 50px;
+	font: 12px "Tofino Regular";
+}
+
+#project-cost-container {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 15px 30px;
+	border-top: 1px solid rgba(137, 137, 137, 0.25);
+	background: rgba(137, 137, 137, 0.05);
+}
+
+#project-cost {
+	color: #757780;
+	font: 15px "Tofino Bold";
+}
+
+.project-feedback {
+	width: 70%;
+	padding-left: 40px;
+}
+
+.project-feedback-card {
+	margin-bottom: 40px;
+	background: #FFF;
+}
+
+.project-feedback-img {
+	width: 100%;
+	height: 300px;
+	background: red;
+}
+
+.project-feedback-text {
+	padding: 30px;
+}
+
+.project-feedback-h {
+	color: #387780;
+	font: 28px "Tofino Bold";
+}
+
+.project-feedback-author {
+	display: block;
+	margin-bottom: 15px;
+	color: #757780;
+	font: 15px "Tofino Book";
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.project-feedback-date {
+	float: right;
+	color: #757780;
+	font: 12px "Tofino Regular";
+}
+
+.project-feedback-p {
+	color: #757780;
+	width: 580px;
+	font: 15px "Tofino Regular";
+}
+
+#add-feedback-card {
+	position: fixed;
+	top: 50%;
+	left: 0;
+	right: 0;
+	bottom: -400px;
+	z-index: 1000;
+	width: 700px;
+	height: 400px;
+	padding: 30px;
+	margin: auto;
+	background: #FFF;
+	transform: translateY(100%);
+	transition: transform .5s;
+}
+
+#add-feedback-card.active {
+	transform: translateY(-100%);
+}
+
+#add-feedback-title {
+	font: 15px "Tofino Regular";
+}
+
+#add-feedback-description {
+	height: 180px;
+	border: none;
+	border-bottom: 1px solid #757780;
+	font: 15px "Tofino Regular";
+	resize: none;
+}
+
+#add-feedback-form-btns {
+	position: absolute;
+	background: rgba(137, 137, 137, 0.05);
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	border-top: 1px solid rgba(137, 137, 137, 0.25);
+	padding: 15px 30px;
+}
+
+#add-feedback-submit {
+	display: inline-block;
+	width: 120px;
+	padding: 10px;
+	border: none;
+	margin-right: 10px;
+	color: #FFF;
+	background: #E83151;
+	font: 15px "Tofino Bold";
+	vertical-align: top;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.file-field {
+	display: inline-block;
+	margin: 0;
+}
+
+.file-field input.file-path {
+	margin-bottom: 0;
+}
+
+.file-field .btn {
+	width: 120px;
+	height: 40px;
+	border-radius: 0;
+	background: #E83151;
+	box-shadow: none;
+	font: 15px/40px "Tofino Bold";
+	cursor: pointer;
+	letter-spacing: 1px;
+}
+
+#overlay {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+	display: none;
 }

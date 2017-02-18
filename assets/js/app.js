@@ -6,4 +6,14 @@ $(document).ready(function() {
 			$("#filter-card").addClass("scrolled");
 		}
 	});
+
+	$("#add-feedback-btn").on("click", function() {
+		$("#overlay").show();
+		$("#add-feedback-card").addClass("active");
+	});
+
+	$("#overlay").on("click", function() {
+		$(this).hide();
+		$("#add-feedback-card").removeClass("active");
+	})
 });
