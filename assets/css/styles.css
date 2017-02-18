@@ -290,11 +290,13 @@ body#feed {
 }
 
 #feed-nav {
+	position: fixed;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	width: 100%;
 	height: 80px;
-	padding: 0 150px;
+	padding: 0 200px;
 	background: #387780;
 }
 
@@ -311,16 +313,18 @@ body#feed {
 	margin-left: 40px;
 }
 
-#feed-wrap {
-	padding: 0 150px;
+#feed-content {
+	padding: 80px 200px;
 }
 
 #feed-container {
+	display: flex;
+	justify-content: space-between;
 	width: 100%;
-	padding-top: 50px;
 }
 
 #feed-h {
+	margin: 80px 0 5px;
 	color: #E83151;
 	font: 21px "Tofino Bold";
 	text-transform: uppercase;
@@ -343,6 +347,9 @@ body#feed {
 .project-card-img {
 	width: 100%;
 	height: 275px;
+	background: url("../images/housing.jpg");
+	background-position-y: 33%;
+	background-size: cover;
 }
 
 .project-card-text {
@@ -368,4 +375,71 @@ body#feed {
 .project-card-p {
 	width: 500px;
 	font: 12px "Tofino Regular";
+}
+
+#filter-col {
+	width: 364px;
+}
+
+#filter-card {
+	transition: transform .5s;
+	position: fixed;
+	width: 364px;
+	padding: 30px;
+	margin-top: 30px;
+	background: #fff;
+	vertical-align: top;
+}
+
+#filter-card.scrolled {
+	transform: translateY(-110px);
+}
+
+#filter-h {
+	margin-bottom: 30px;
+	font: 21px "Tofino Bold";
+	text-transform: uppercase;
+	color: #757780;
+}
+
+#filter-select {
+	display: block;
+	width: 100%;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #757780;
+	font: 15px "Tofino Regular";
+	padding: 5px 0;
+	color: #757780;
+}
+
+#search-field {
+	width: 100%;
+	margin-bottom: 100px;
+	padding: 5px 0;
+	border: none;
+	border-bottom: 1px solid #757780;
+	color: #757780;
+	font: 15px "Tofino Regular";
+}
+
+#filter-btn-container {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 15px 30px;
+	border-top: 1px solid rgba(137, 137, 137, 0.25);
+	background: rgba(137, 137, 137, 0.05);
+}
+
+#filter-submit {
+	width: 120px;
+	height: 40px;
+	border: none;
+	color: #fff;
+	background: #E83151;
+	font: 15px "Tofino Bold";
+	letter-spacing: 1px;
+	text-transform: uppercase;
 }
