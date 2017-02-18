@@ -1,0 +1,371 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	padding: 0;
+	border: 0;
+	margin: 0;
+	font: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+	content: none;
+}
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+/*
+ ==================================================
+ FONTS
+
+*/
+
+@font-face {
+	font-family: "Tofino Book";
+	font-weight: normal;
+	font-style: normal;
+	src: url("../fonts/Tofino-Book/Tofino-Book.eot");
+	src: url("../fonts/Tofino-Book/Tofino-Book.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/Tofino-Book/Tofino-Book.woff2") format("woff2"),
+		 url("../fonts/Tofino-Book/Tofino-Book.woff") format("woff"),
+		 url("../fonts/Tofino-Book/Tofino-Book.ttf") format("truetype"),
+		 url("../fonts/Tofino-Book/Tofino-Book.svg#Tofino-Book") format("svg");
+}
+
+@font-face {
+	font-family: "Tofino Regular";
+	font-weight: normal;
+	font-style: normal;
+	src: url("../fonts/Tofino-Regular/Tofino-Regular.eot");
+	src: url("../fonts/Tofino-Regular/Tofino-Regular.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/Tofino-Regular/Tofino-Regular.woff2") format("woff2"),
+		 url("../fonts/Tofino-Regular/Tofino-Regular.woff") format("woff"),
+		 url("../fonts/Tofino-Regular/Tofino-Regular.ttf") format("truetype"),
+		 url("../fonts/Tofino-Regular/Tofino-Regular.svg#Tofino-Regular") format("svg");
+}
+
+@font-face {
+	font-family: "Tofino Bold";
+	font-weight: bold;
+	font-style: normal;
+	src: url("../fonts/Tofino-Bold/Tofino-Bold.eot");
+	src: url("../fonts/Tofino-Bold/Tofino-Bold.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/Tofino-Bold/Tofino-Bold.woff2") format("woff2"),
+		 url("../fonts/Tofino-Bold/Tofino-Bold.woff") format("woff"),
+		 url("../fonts/Tofino-Bold/Tofino-Bold.ttf") format("truetype"),
+		 url("../fonts/Tofino-Bold/Tofino-Bold.svg#Tofino-Bold") format("svg");
+}
+
+/*
+ ==================================================
+ GLOBAL
+
+*/
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/*
+ ==================================================
+ HOME
+
+*/
+
+#jumbo-nav ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav ul li {
+	color: #fff;
+	font: 15px "Tofino Bold";
+	cursor: pointer;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+#jumbotron {
+	width: 100%;
+	height: 100vh;
+	padding: 75px 100px;
+	background: url("../images/cover.jpg") no-repeat;
+	background-position: 50% 75%;
+	background-size: 100%;
+}
+
+#jumbotron .logo {
+	height: 50px;
+}
+
+#jumbo-hs {
+	position: absolute;
+	bottom: 100px;
+}
+
+#jumbo-hs h2 {
+	margin-bottom: 12px;
+	color: #fff;
+	font: 50px/50px "Tofino Book";
+}
+
+#jumbo-hs h1 {
+	margin-bottom: 40px;
+	color: #fff;
+	font: 67px/67px "Tofino Bold";
+	letter-spacing: 2px;
+}
+
+#jumbo-btn {
+	width: 300px;
+	height: 60px;
+	border: none;
+	color: #fff;
+	background: #E83151;
+	font: 21px "Tofino Bold";
+	cursor: pointer;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+/*
+ ==================================================
+ LOGIN
+
+*/
+
+body#login {
+	height: 100vh;
+	background: #387780;
+}
+
+#login-page-wrap {
+	position: relative;
+	top: 50%;
+	transform: translateY(-55%);
+}
+
+#login .logo {
+	display: block;
+	width: 200px;
+	margin: 0 auto 50px;
+}
+
+#login-container {
+	position: relative;
+	overflow: hidden;
+	width: 396px;
+	height: 385px;
+	padding: 48px;
+	margin: 0 auto;
+	background: #fff;
+	box-shadow: 0 0 5px rgba(0,0,0,.1);
+}
+
+#login h3 {
+	margin-bottom: 25px;
+	color: #387780;
+	font: 21px "Tofino Bold";
+	letter-spacing: 1px;
+}
+
+#login-form {
+	color: #898989;
+}
+
+#login-form input:not([type="checkbox"]) {
+	width: 296px;
+	height: 40px;
+}
+
+.text-field {
+	padding: 10px;
+	border: 1px solid #898989;
+	outline-color: #d5af44;
+	font: 15px "Tofino Regular";
+}
+
+#login-form .text-field:first-child {
+	margin-bottom: 15px;
+}
+
+#login-form .text-field:nth-child(2) {
+	margin-bottom: 12px;
+}
+
+#remember-line {
+	display: block;
+	margin-bottom: 20px;
+}
+
+#remember-cbox {
+	margin-left: 0;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+#remember-text {
+	font: 12px "Tofino Regular";
+}
+
+#login-submit {
+	border: none;
+	color: #fff;
+	background: #E83151;
+	font: 15px "Tofino Bold";
+	cursor: pointer;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+#forgot-bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 61px;
+	border: 1px solid rgba(137,137,137,.25);
+	background: rgba(137,137,137,.15);
+	line-height: 61px;
+	text-align: center;
+}
+
+#forgot-text {
+	color: #898989;
+	font: 12px "Tofino Regular";
+	text-decoration: underline;
+}
+
+/*
+ ==================================================
+ FEED
+
+*/
+
+body#feed {
+	background: #eee;
+}
+
+#feed-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 80px;
+	padding: 0 150px;
+	background: #387780;
+}
+
+#feed-nav .logo {
+	width: 180px;
+}
+
+#feed-nav ul {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#feed-nav ul li {
+	margin-left: 40px;
+}
+
+#feed-wrap {
+	padding: 0 150px;
+}
+
+#feed-container {
+	width: 100%;
+	padding-top: 50px;
+}
+
+#feed-h {
+	color: #E83151;
+	font: 21px "Tofino Bold";
+	text-transform: uppercase;
+}
+
+#feed-h-line {
+	width: 45px;
+	height: 5px;
+	background: #E83151;
+}
+
+.project-card {
+	width: 750px;
+	height: 425px;
+	margin-top: 30px;
+	background: #fff;
+	cursor: pointer;
+}
+
+.project-card-img {
+	width: 100%;
+	height: 275px;
+}
+
+.project-card-text {
+	width: 100%;
+	height: 150px;
+	padding: 30px;
+}
+
+.project-card-title {
+	color: #387780;
+	font: 21px/21px "Tofino Bold";
+}
+
+.project-card-city {
+	display: block;
+	margin-bottom: 5px;
+	color: #387780;
+	font: 9px "Tofino Book";
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.project-card-p {
+	width: 500px;
+	font: 12px "Tofino Regular";
+}
