@@ -25,7 +25,7 @@ function queryFeed(longitude, latitude){
 
     success: function(response) {
        $.each(response, function(index,value){
-      addtoFeed(value.id,value.name,value.description,value.distance,value.rating);
+      addtoFeed(value.projectID,value.name,value.description,value.distance,value.localGovernmentName,value.upvotes,value.downvotes);
 
        });
 
@@ -38,19 +38,28 @@ function queryFeed(longitude, latitude){
     });
 };
 
-function addtoFeed(projectid, name, description, distance, rating){
-    var x='<div class="project-card">\
-          <div class="project-card-img"></div>\
-          <div class="project-card-text">\
-            <h4 class="project-card-title">'+name+'</h4>\
-            <span class="project-card-city">Quezon City, Metro Manila</span>\
-            <p class="project-card-p">'+description+'</p>\
+function addtoFeed(projectid, name, description, distance, LGUName, upvotes, downvotes){
+  
+    var x= '<div class="project-card">\
+          <div class="project-card-img" id=project'+projectid+'></div>\
+          <div class="project-card-info">\
+            <div class="project-card-text">\
+              <h4 class="project-card-title">'+name+'</h4>\
+              <span class="project-card-city">'+distance+' - '+LGUName+'</span>\
+              <p class="project-card-p">It with need of the eminent view to mice sleeping it poets, country. They is said a the but her chooses belt rather, bear value turn with a flatter problem. I the partially of her in to food, field her the the expenses presentations.</p>\
+            </div>\
+            <div class="project-card-votes">\
+              <div class="project-card-upvotes">+'+upvotes+'</div>\
+              <div class="project-card-downvotes">-'+downvotes+'</div>\
+            </div>\
           </div>\
         </div>';
 
-    $(".project-container").append(x);
+    $("#projects-col").append(x);
 
-
+    $("#project"+projectid).click(function(e){
+        window.location.href="project.php?id="+projectid;
+    });
 };
 
 function search(){
@@ -59,7 +68,7 @@ function search(){
   var selected=$('#filter-select').find(":selected").val();
 
   if( selected==0 && !(query.length===0) ){
-  $(".project-container").empty();
+  $("#projects-col").empty();
   navigator.geolocation.getCurrentPosition(function(position) {
   var latitude= position.coords.latitude; 
   var longitude=position.coords.longitude;
@@ -75,7 +84,7 @@ function search(){
 
     success: function(response) {
        $.each(response, function(index,value){
-      addtoFeed(value.id,value.name,value.description,value.distance,value.rating);
+      addtoFeed(value.id,value.name,value.description,value.distance,value.localGovernmentName,value.upvotes,value.downvotes);
        });
 
 
@@ -90,7 +99,7 @@ function search(){
   }
   else if(selected!=0 && query.length===0){
       if(selected==1){ //search by distance
-        $(".project-container").empty();
+       $("#projects-col").empty();
         navigator.geolocation.getCurrentPosition(function(position) {
         var latitude= position.coords.latitude; 
         var longitude=position.coords.longitude;
@@ -105,7 +114,7 @@ function search(){
 
         success: function(response) {
           $.each(response, function(index,value){
-          addtoFeed(value.id,value.name,value.description,value.distance,value.rating);
+          addtoFeed(value.id,value.name,value.description,value.distance,value.localGovernmentName,value.upvotes,value.downvotes);
           });
 
 
@@ -119,7 +128,7 @@ function search(){
     });
   }
       else {
-        $(".project-container").empty();
+        $("#projects-col").empty();
         navigator.geolocation.getCurrentPosition(function(position) {
         var latitude= position.coords.latitude; 
         var longitude=position.coords.longitude;
@@ -134,7 +143,7 @@ function search(){
 
           success: function(response) {
             $.each(response, function(index,value){
-            addtoFeed(value.id,value.name,value.description,value.distance,value.rating);
+            addtoFeed(value.id,value.name,value.description,value.distance,value.localGovernmentName,value.upvotes,value.downvotes);
             });
           },
             error: function(xhr) {
@@ -148,7 +157,7 @@ function search(){
 
   }
   else{
-    $(".project-container").empty();
+    $("#projects-col").empty();
         navigator.geolocation.getCurrentPosition(function(position) {
         var latitude= position.coords.latitude; 
         var longitude=position.coords.longitude;
@@ -165,7 +174,7 @@ function search(){
 
           success: function(response) {
             $.each(response, function(index,value){
-            addtoFeed(value.id,value.name,value.description,value.distance,value.rating);
+            addtoFeed(value.id,value.name,value.description,value.distance,value.localGovernmentName,value.upvotes,value.downvotes);
             });
           },
             error: function(xhr) {

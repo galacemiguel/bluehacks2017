@@ -1,25 +1,20 @@
+$(document).ready(function() {
+
 $('#login-form').on('submit', login());
 
 function login(){
 	$.ajax({
     url: "http://localhost:9999/main/login",
-    type: "POST",
-    contentType: "application/json",
-    data: JSON.stringify({
+    type: "GET",
+    data: {
         username:$("#username-field").val(),
-       	password:$("#password-fi").val()
+       	password:$("#password-field").val()
         
-     }),
+     },
 
     success: function(response) {
-        if(response==1){
-        //window.location.href = "login.html";
-        console.log("SUCCESS");
-        }
-        else{
-        //$("#eError").show(); 
-        console.log("FAIL");
-        }
+        
+        window.location.href = "feed.php?id="+response;
        },
       error: function(xhr) {
         console.log("Error");
@@ -27,3 +22,5 @@ function login(){
       }
     });
 };
+
+});

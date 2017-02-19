@@ -2,12 +2,12 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Project Civ</title>
+	<title></title>
 	<meta name="description" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/project.js"></script>
 	<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection"/>
 	<link rel="stylesheet" href="assets/css/styles.css" />
@@ -19,7 +19,7 @@
 		<img class="logo" src="assets/images/logo.png" />
 		<ul>
 			<li>My Projects</li>
-			<li>Rankings</li>
+			<li>My Account</li>
 			<li>Log Out</li>
 		</ul>
 	</nav>
@@ -85,5 +85,7 @@
 	<a class="add-btn btn-floating btn-large waves-effect waves-light" id="add-feedback-btn"><i class="material-icons">add</i></a>
 
 	<script type="text/javascript" src="assets/js/materialize.min.js"></script>
+
+
 </body>
 </html>
